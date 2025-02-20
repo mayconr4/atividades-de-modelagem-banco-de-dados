@@ -6,3 +6,4 @@
 
 ## Exemplo de modelagem lógica
 
+![](modelagem-logica/modelagem-logica.png)

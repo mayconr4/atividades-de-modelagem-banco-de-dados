@@ -8,6 +8,6 @@
 
 ![](modelagem-logica/modelagem-logica.png) 
 
-## Exercicio - 01 - relações filmes 
+## Exercicio - 01 - relações filmes logica
 
-![](exercicios-banco-de-dados/img-exercicio-1-filmes.png)
+![](exercicios-banco-de-dados/img-exercicio-1-filmes.png) 

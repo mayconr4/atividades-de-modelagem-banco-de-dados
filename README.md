@@ -10,4 +10,4 @@
 
 ## Exercicio - 01 - relações filmes 
 
-![](exercicio-banco-de-dados/img-exercicio-1-filmes.png)
+![](exercicios-banco-de-dados/img-exercicio-1-filmes.png)

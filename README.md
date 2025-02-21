@@ -6,4 +6,8 @@
 
 ## Exemplo de modelagem lógica
 
-![](modelagem-logica/modelagem-logica.png)
+![](modelagem-logica/modelagem-logica.png) 
+
+## Exercicio - 01 - relações filmes 
+
+![](exercicio-banco-de-dados/img-exercicio-1-filmes.png)

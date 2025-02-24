@@ -66,5 +66,12 @@ ALTER TABLE produtos ADD quantidade INT NULL AFTER preco;
 ```sql 
  ALTER TABLE fabricantes RENAME TO fornecedores; 
  ALTER TABLE fornecedores RENAME TO fabricantes;
+``` 
+
+#### Renomear coluna
+
+```sql 
+ALTER TABLE produtos CHANGE descricao detalhes TEXT(500) NULL; 
+ALTER TABLE produtos CHANGE detalhes descricao TEXT(500) NULL;
 ```
  

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25/02/2025 às 13:14
+-- Tempo de geração: 25/02/2025 às 15:50
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `vendas`
 --
-CREATE DATABASE IF NOT EXISTS `vendas` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `vendas`;
 
 -- --------------------------------------------------------
 
@@ -33,6 +31,20 @@ CREATE TABLE `fabricantes` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `fabricantes`
+--
+
+INSERT INTO `fabricantes` (`id`, `nome`) VALUES
+(2, 'Asus'),
+(3, 'Dell'),
+(4, 'Apple'),
+(5, 'LG'),
+(6, 'Samsung'),
+(7, 'Brastemp'),
+(8, 'Positivo'),
+(9, 'Microsoft');
 
 -- --------------------------------------------------------
 
@@ -48,6 +60,19 @@ CREATE TABLE `produtos` (
   `quantidade` int(11) DEFAULT NULL,
   `fabricante_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id`, `nome`, `detalhes`, `preco`, `quantidade`, `fabricante_id`) VALUES
+(1, 'Ultrabook', 'Equipamento de última geração cheio de recursos, e ect e tal...', 3999.45, 7, 2),
+(2, 'Tablet Android', 'Tablet com aversão 16 do sistema operacional Android, possui tela de 10 polegadas e armazenamento de 128 GB. Estou sem ideias do que escrever aqui.', 900.00, 12, 5),
+(3, 'geladeira', 'Refrigerador frost-free com acessoa á internet', 5000.00, 12, 7),
+(4, 'iPhone 18 pro max Ferradão', 'Smartphone Apple cheio das frescuras e caro pra caramba... coisa der rico..', 9666.66, 3, 3),
+(5, 'Ipad mini', 'Tablet Apple com tela retina display e bla bla bla e mó bunitinha', 4999.12, 5, 3),
+(6, 'Xbox Series S', 'Velocidade e desempenho de ultimá geração', 1997.00, 5, 7),
+(7, 'Notebook Motion', 'Intel Dual Core $g8 de RAM, 128GB SSD e Tela 14,1 polegadas', 1213.65, 8, 8);
 
 --
 -- Índices para tabelas despejadas
@@ -74,13 +99,13 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `fabricantes`
 --
 ALTER TABLE `fabricantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restrições para tabelas despejadas

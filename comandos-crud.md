@@ -121,6 +121,11 @@ SELECT preco, nome FROM produtos;
 
 -- Mostrar nome , preco e quantidade SOMENTE  dos produtos que custam abaixo de 5000 
 SELECT nome, preco, quantidade FROM produtos 
-WHERE preco < 5000; 
+WHERE preco < 5000;  
+
+
+-- Mini-Exercicio: mostre o nome e descrição somente dos produtos da aplle 
+SELECT nome, detalhes  FROM produtos 
+WHERE fabricante_id = 3;
 ```
 

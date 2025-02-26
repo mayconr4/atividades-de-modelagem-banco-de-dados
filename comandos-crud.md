@@ -161,4 +161,42 @@ WHERE NOT fabricante_id = 8;
 -- Versão usando operador relacional ! de "diferença/diferente" 
 SELECT nome, detalhes, preco FROM produtos 
 WHERE  fabricante_id != 8;
+``` 
+
+--- 
+
+
+## UPDATE (Fabricantes)  
+
+**☠️💀CUIDADO🫀** 
+
+**SEMPRE USE**  a clausula `WHERE` em seu comando `UPDATE` especificando uma ou mais condições para atualização. 
+
+
+```sql  
+-- Trocar o nome do fabricante Asus para Asus do Brasil
+UPDATE fabricantes SET nome = 'Asus do Brasil' 
+WHERE id =2; 
+
+-- Mini-exercicio Alterar a quantidade para 10  dos produtos que custam abaixo de 2000 execeto da Microsoft. 
+
+UPDATE produtos set quantidade = 10  
+WHERE  preco <2000 AND fabricante_id != 7;  
+
+``` 
+
+--- 
+
+## DELETE (Fabricantes e Produtos)  
+
+**☠️💀PERIGO!!🫀** 
+
+**SEMPRE USE**  a clausula `WHERE` em seu comando `DELETE` especificando uma ou mais condições para atualização. 
+
+```sql 
+DELETE FROM fabricantes WHERE id = 5; 
+
+DELETE FROM  Produtos WHERE id = 4; 
+
+DELETE FROM fabricantes WHERE id = 3;
 ```

@@ -129,3 +129,12 @@ SELECT nome, detalhes  FROM produtos
 WHERE fabricante_id = 3;
 ```
 
+### Operadores lógicos:E, OU e Não 
+
+#### E (AND) 
+
+```sql  
+-- Exibir nome e preco dos produtos que custam entre 2000 e 6000 
+SELECT nome, preco FROM produtos
+WHERE preco >= 2000 AND preco <= 6000;
+```

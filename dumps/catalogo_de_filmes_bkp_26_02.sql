@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25/02/2025 às 13:28
+-- Tempo de geração: 26/02/2025 às 15:57
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -30,11 +30,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `detalhes` (
   `id` int(11) NOT NULL,
   `duracao` int(11) NOT NULL,
-  `sinpose` text NOT NULL,
+  `sinopse` text NOT NULL,
   `bilheteria` decimal(16,2) DEFAULT NULL,
   `orcamento` decimal(16,2) DEFAULT NULL,
   `filme_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `detalhes`
+--
+
+INSERT INTO `detalhes` (`id`, `duracao`, `sinopse`, `bilheteria`, `orcamento`, `filme_id`) VALUES
+(1, 154, 'Ano de 2004. Maria e Henry (Naomi Watts e Ewan McGregor) decidem passar as férias de Natal na Tailândia com os três filhos de ambos', NULL, 45000000.00, 5),
+(2, 120, 'Spencer volta ao mundo fantástico de Jumanji. Os amigos Martha, Fridge e Bethany entram no jogo e tentam trazê-lo para casa. A turma descobre ainda mais obstáculos e perigos a serem superados.', NULL, 950000000.00, 4);
 
 -- --------------------------------------------------------
 
@@ -49,6 +57,18 @@ CREATE TABLE `filmes` (
   `genero_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `filmes`
+--
+
+INSERT INTO `filmes` (`id`, `titulo`, `lancamento`, `genero_id`) VALUES
+(1, 'Familia Do Bagulho', '0000-00-00', 3),
+(2, 'Invocação do mal ', '2025-09-13', 1),
+(3, 'Era Do gelo', '2002-03-22', 2),
+(4, 'Vingadores O Ultimato', '2019-04-25', 6),
+(5, 'Jumanji', '2019-12-05', 4),
+(6, 'O impossivel', '2012-12-21', 5);
+
 -- --------------------------------------------------------
 
 --
@@ -59,6 +79,18 @@ CREATE TABLE `generos` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `generos`
+--
+
+INSERT INTO `generos` (`id`, `nome`) VALUES
+(1, 'Terror'),
+(2, 'Animação'),
+(3, 'Comédia'),
+(4, 'Aventura'),
+(5, 'Suspense'),
+(6, 'Ficção Cientifica');
 
 --
 -- Índices para tabelas despejadas
@@ -92,19 +124,19 @@ ALTER TABLE `generos`
 -- AUTO_INCREMENT de tabela `detalhes`
 --
 ALTER TABLE `detalhes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `filmes`
 --
 ALTER TABLE `filmes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `generos`
 --
 ALTER TABLE `generos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restrições para tabelas despejadas

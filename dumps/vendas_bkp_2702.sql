@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25/02/2025 às 15:50
+-- Tempo de geração: 27/02/2025 às 16:00
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -37,14 +37,15 @@ CREATE TABLE `fabricantes` (
 --
 
 INSERT INTO `fabricantes` (`id`, `nome`) VALUES
-(2, 'Asus'),
+(2, 'Asus do Brasil'),
 (3, 'Dell'),
-(4, 'Apple'),
 (5, 'LG'),
 (6, 'Samsung'),
 (7, 'Brastemp'),
 (8, 'Positivo'),
-(9, 'Microsoft');
+(9, 'Microsoft'),
+(12, 'Philco'),
+(13, 'Eletrolux');
 
 -- --------------------------------------------------------
 
@@ -67,12 +68,15 @@ CREATE TABLE `produtos` (
 
 INSERT INTO `produtos` (`id`, `nome`, `detalhes`, `preco`, `quantidade`, `fabricante_id`) VALUES
 (1, 'Ultrabook', 'Equipamento de última geração cheio de recursos, e ect e tal...', 3999.45, 7, 2),
-(2, 'Tablet Android', 'Tablet com aversão 16 do sistema operacional Android, possui tela de 10 polegadas e armazenamento de 128 GB. Estou sem ideias do que escrever aqui.', 900.00, 12, 5),
-(3, 'geladeira', 'Refrigerador frost-free com acessoa á internet', 5000.00, 12, 7),
-(4, 'iPhone 18 pro max Ferradão', 'Smartphone Apple cheio das frescuras e caro pra caramba... coisa der rico..', 9666.66, 3, 3),
+(2, 'Tablet Android', 'Tablet com aversão 16 do sistema operacional Android, possui tela de 10 polegadas e armazenamento de 128 GB. Estou sem ideias do que escrever aqui.', 900.00, 10, 5),
+(3, 'geladeira', 'Refrigerador frost-free com acessoa á internet', 1999.00, 12, 7),
 (5, 'Ipad mini', 'Tablet Apple com tela retina display e bla bla bla e mó bunitinha', 4999.12, 5, 3),
-(6, 'Xbox Series S', 'Velocidade e desempenho de ultimá geração', 1997.00, 5, 7),
-(7, 'Notebook Motion', 'Intel Dual Core $g8 de RAM, 128GB SSD e Tela 14,1 polegadas', 1213.65, 8, 8);
+(6, 'Xbox Series S', 'Velocidade e desempenho de ultimá geração', 1999.00, 5, 7),
+(7, 'Notebook Motion', 'Intel Dual Core $g8 de RAM, 128GB SSD e Tela 14,1 polegadas', 1213.65, 10, 8),
+(8, 'Teclado Gamer', 'Teclado bom pra caramba para jogar.', 300.00, 3, 3),
+(9, 'Garrafa Térmica', 'Gela igual o Polo Norte', 156.45, 25, 9),
+(10, 'Smartphone Poco X7', 'Celular chique com inteligência artificial chei do bagui chique', 1999.99, 7, 6),
+(11, 'SmartTV', 'TV curvada tela de 50 polegadas e acesso ao Netlix.', 1587.12, 15, 6);
 
 --
 -- Índices para tabelas despejadas
@@ -99,13 +103,13 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `fabricantes`
 --
 ALTER TABLE `fabricantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restrições para tabelas despejadas

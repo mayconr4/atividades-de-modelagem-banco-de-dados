@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26/02/2025 às 15:57
+-- Tempo de geração: 27/02/2025 às 16:00
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -42,7 +42,11 @@ CREATE TABLE `detalhes` (
 
 INSERT INTO `detalhes` (`id`, `duracao`, `sinopse`, `bilheteria`, `orcamento`, `filme_id`) VALUES
 (1, 154, 'Ano de 2004. Maria e Henry (Naomi Watts e Ewan McGregor) decidem passar as férias de Natal na Tailândia com os três filhos de ambos', NULL, 45000000.00, 5),
-(2, 120, 'Spencer volta ao mundo fantástico de Jumanji. Os amigos Martha, Fridge e Bethany entram no jogo e tentam trazê-lo para casa. A turma descobre ainda mais obstáculos e perigos a serem superados.', NULL, 950000000.00, 4);
+(2, 120, 'Spencer volta ao mundo fantástico de Jumanji. Os amigos Martha, Fridge e Bethany entram no jogo e tentam trazê-lo para casa. A turma descobre ainda mais obstáculos e perigos a serem superados.', NULL, 950000000.00, 4),
+(3, 180, 'Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos.', NULL, 3560000000.00, 6),
+(4, 81, 'Vinte mil anos atrás, num mundo coberto de gelo, o mamute Manfred e a preguiça Sid resgatam um bebê humano órfão.', NULL, 600000000.00, 2),
+(5, 110, 'O traficante David precisa ir ao México pegar um carregamento de maconha.', NULL, 370000000.00, 3),
+(6, 112, 'Os investigadores paranormais Ed e Lorraine Warren trabalham para ajudar a família aterrorizada.', NULL, 200000000.00, 1);
 
 -- --------------------------------------------------------
 
@@ -62,8 +66,8 @@ CREATE TABLE `filmes` (
 --
 
 INSERT INTO `filmes` (`id`, `titulo`, `lancamento`, `genero_id`) VALUES
-(1, 'Familia Do Bagulho', '0000-00-00', 3),
-(2, 'Invocação do mal ', '2025-09-13', 1),
+(1, 'Familia Do Bagulho', '2013-09-27', 3),
+(2, 'Invocação do mal ', '2013-09-13', 1),
 (3, 'Era Do gelo', '2002-03-22', 2),
 (4, 'Vingadores O Ultimato', '2019-04-25', 6),
 (5, 'Jumanji', '2019-12-05', 4),
@@ -90,7 +94,8 @@ INSERT INTO `generos` (`id`, `nome`) VALUES
 (3, 'Comédia'),
 (4, 'Aventura'),
 (5, 'Suspense'),
-(6, 'Ficção Cientifica');
+(6, 'Ficção Cientifica'),
+(7, 'Suspense Infantil');
 
 --
 -- Índices para tabelas despejadas
@@ -124,19 +129,19 @@ ALTER TABLE `generos`
 -- AUTO_INCREMENT de tabela `detalhes`
 --
 ALTER TABLE `detalhes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `filmes`
 --
 ALTER TABLE `filmes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `generos`
 --
 ALTER TABLE `generos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restrições para tabelas despejadas
@@ -146,7 +151,7 @@ ALTER TABLE `generos`
 -- Restrições para tabelas `detalhes`
 --
 ALTER TABLE `detalhes`
-  ADD CONSTRAINT `fk_filme_detalhes` FOREIGN KEY (`filme_id`) REFERENCES `filmes` (`id`);
+  ADD CONSTRAINT `fk_filme_detalhes` FOREIGN KEY (`filme_id`) REFERENCES `filmes` (`id`) ON DELETE CASCADE;
 
 --
 -- Restrições para tabelas `filmes`

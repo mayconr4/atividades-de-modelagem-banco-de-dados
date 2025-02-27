@@ -1,4 +1,6 @@
-#### exercicio 04 sugestivo/opcional de escolha  
+# exercicio 04 sugestivo/opcional de escolha  
+
+## INserindo dados na tabela generos
 
 ```sql  
 
@@ -10,7 +12,9 @@ INSERT INTO generos (nome) VALUES('Aventura');
 INSERT INTO generos (nome) VALUES('Suspense'); 
 INSERT INTO generos (nome) VALUES('Ficção Cientifica') ; 
 
-
+```
+## Inseriondo dados na tabela filmes
+```sql
 INSERT INTO filmes(titulo, lancamento, genero_id) 
 VALUES( 
     'Invocação do mal ', 
@@ -51,7 +55,11 @@ VALUES(
     'O impossivel', 
     '2012-12-21', 
     5                
-); 
+);  
+
+``` 
+### Inserindo detalhes a tabela filmes 
+```sql
 
 INSERT INTO detalhes(duracao, sinopse, bilheteria, orcamento, filme_id) 
 VALUES( 

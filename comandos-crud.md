@@ -16,7 +16,7 @@
 INSERT INTO fabricantes (nome) VALUES('Asus'); 
 INSERT INTO fabricantes (nome) VALUES('Dell'); 
 INSERT INTO fabricantes (nome) VALUES('Apple'); 
-
+INSERT INTO fabricantes (nome) VALUES('Philco'), ('Eletrolux');
 INSERT INTO fabricantes (nome) VALUES('LG'), ('Samsung'), ('Brastemp');
 ``` 
 
@@ -245,5 +245,63 @@ SELECT COUNT(id) AS "Qtd e produtos" FROM produtos;
 SELECT COUNT(DISTINCT fabricante_id) AS "Qtd de fabricantes com produtos" FROM produtos; 
 
 -- Operações matemáticas 
-SELECT nome, preco, quantidade, (preco * quantidade) as Total FROM produtos;
+SELECT nome, preco, quantidade, (preco * quantidade) as Total FROM produtos; 
+
+
+--- Segmentação/agrupamento de resultados 
+SELECT fabricante_id, SUM(preco) AS total FROM produtos 
+GROUP BY fabricante_id
+
+``` 
+
+## Consultas (Queries) em duas ou mais tabelas relacionadas (JUNÇÃO/JOIN)  
+
+### Exibir o nome do produto e o nome do fabricante do produto 
+```sql  
+-- SELECT nomeDaTabela1.nomeDaColuna, nomeDaTabela2.nomeDaColuna,
+SELECT produtos.nome AS Produto, fabricantes.nome AS Fabricante 
+
+-- JOIN permite JUNTAR as tabelas no momento do SELECT
+FROM produtos INNER JOIN fabricantes 
+ 
+-- ON indicando os criterios do relacionamento
+-- On tabela1.chave_estrangeira = tabela2.chave_primaria
+ON produtos.fabricantes_id = fabricantes.id;
+``` 
+
+
+### Nome do produto, preço do produto, nome do fabriicante ordenados pelo nome do produto e pelo preço 
+
+```sql 
+SELECT 
+    produtos.nome AS Produto, 
+     produtos.preco AS Preço, 
+    fabricantes.nome AS Fabricante FROM produtos INNER JOIN fabricantes 
+    ON produtos.fabricante_id = fabricantes.id ORDER BY Produto ASC, Preço  
+    DESC;  -- trocando o id da chave estrangeira pelo seu nome exemplo em vez de ser o numero de identificação desta chave , vai ser o nome que a chave primaria da chave estrangeira  recebeu
 ```
+### Fabricante, soma dos Preços, Quantidade de produtos POR Fabricante 
+```sql 
+SELECT fabricantes.nome AS Fabricante,  
+    SUM(produtos.preco) AS Total ,COUNT(produtos.fabricante_id) AS "Qtd de Produtos" FROM produtos RIGHT JOIN fabricantes ON produtos.fabricante_id = fabricantes.id  
+GROUP BY Fabricante 
+ORDER BY Total;
+``` 
+   
+   ### mini Desafio
+ - Tente Mostrar o  Filme e o genero do Filme  
+```sql 
+SELECT 
+    generos.nome AS Gênero, 
+    filmes.titulo  AS Filme FROM filmes INNER JOIN generos ON  
+    filmes.generos_id = genero.id ;
+```
+
+ - Tente Mostar  o Filme e o detalhe do Filme   
+```sql 
+SELECT  
+    detalhes.sinopse AS sinopse, 
+    filmes.titulo AS filme FROM filmes INNER JOIN detalhes ON 
+    detalhes.filme_id = filmes.id   ;    
+```
+ - Tente Mostar  o Filme, o Gênero e o Detalhe do Filme 

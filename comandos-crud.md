@@ -233,5 +233,17 @@ SELECT nome AS Produto, preco  Preço FROM produtos; -- omitindo o AS
  
 -- Funções de formatação/configurações: FORMAT e REPLACE
 SELECT FORMAT(SUM(preco), 2) AS Total FROM produtos; 
-SELECT REPLACE(FORMAT(SUM(preco), 2), ",", ".") AS Total FROM produtos;
+SELECT REPLACE(FORMAT(SUM(preco), 2), ",", ".") AS Total FROM produtos; 
+
+-- Função de média: AVG (Average) 
+-- Função de aredondamento: ROUND
+SELECT AVG(preco) AS "Média dos Preços" FROM produtos; 
+SELECT ROUND(AVG(preco)) AS "Média dos Preços" FROM produtos; 
+
+-- Função de contagem: COUNT
+SELECT COUNT(id) AS "Qtd e produtos" FROM produtos; 
+SELECT COUNT(DISTINCT fabricante_id) AS "Qtd de fabricantes com produtos" FROM produtos; 
+
+-- Operações matemáticas 
+SELECT nome, preco, quantidade, (preco * quantidade) as Total FROM produtos;
 ```

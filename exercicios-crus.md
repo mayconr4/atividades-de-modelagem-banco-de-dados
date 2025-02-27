@@ -69,6 +69,63 @@ VALUES(
     NULL, 
     950000000.00, 
     4               
-);
+); 
+
+INSERT INTO detalhes(duracao, sinopse, bilheteria, orcamento, filme_id) 
+VALUES( 
+    180.00, 
+    'Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos.', 
+    NULL, 
+    3560000000.00, 
+    6               
+); 
+
+INSERT INTO detalhes(duracao, sinopse, bilheteria, orcamento, filme_id) 
+VALUES( 
+    81.0, 
+    'Vinte mil anos atrás, num mundo coberto de gelo, o mamute Manfred e a preguiça Sid resgatam um bebê humano órfão.', 
+    NULL, 
+     600000000.00, 
+    2               
+); 
+
+INSERT INTO detalhes(duracao, sinopse, bilheteria, orcamento, filme_id) 
+VALUES( 
+    110.00, 
+    'O traficante David precisa ir ao México pegar um carregamento de maconha.', 
+    NULL, 
+     370000000.00, 
+    3               
+); 
+
+INSERT INTO detalhes(duracao, sinopse, bilheteria, orcamento, filme_id) 
+VALUES( 
+    112.00, 
+    'Os investigadores paranormais Ed e Lorraine Warren trabalham para ajudar a família aterrorizada.', 
+    NULL, 
+     200000000.00, 
+    1               
+);    
+
+``` 
+
+## Usando Select 
+
+```sql  
+
+-- mudando as datas 
+UPDATE filmes SET lancamento = '2013-09-27'
+WHERE  genero_id = 3;  
+
+UPDATE filmes SET lancamento = '2013-09-13' 
+WHERE genero_id = 1;
+
+``` 
+
+# Usando delete 
+
+```sql  
+-- deletando filme não deu para deletar por que em detalhes nesse filme
+DELETE FROM filmes WHERE id = 4; 
 
 ```

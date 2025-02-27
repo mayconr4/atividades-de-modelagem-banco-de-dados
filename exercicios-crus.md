@@ -134,6 +134,6 @@ WHERE genero_id = 1;
 
 ```sql  
 -- deletando filme não deu para deletar por que em detalhes nesse filme
-DELETE FROM filmes WHERE id = 4; 
+DELETE FROM filmes WHERE id = 7 ; 
 
 ```

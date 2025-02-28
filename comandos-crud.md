@@ -291,17 +291,30 @@ ORDER BY Total;
    ### mini Desafio
  - Tente Mostrar o  Filme e o genero do Filme  
 ```sql 
-SELECT 
-    generos.nome AS Gênero, 
-    filmes.titulo  AS Filme FROM filmes INNER JOIN generos ON  
-    filmes.generos_id = genero.id ;
+SELECT       
+    filmes.titulo  AS "Titulo do Filme", 
+    generos.nome AS "Gênero do Filme"
+    FROM filmes  
+    INNER JOIN generos ON filmes.genero_id = generos.id;
 ```
 
  - Tente Mostar  o Filme e o detalhe do Filme   
 ```sql 
 SELECT  
-    detalhes.sinopse AS sinopse, 
-    filmes.titulo AS filme FROM filmes INNER JOIN detalhes ON 
-    detalhes.filme_id = filmes.id   ;    
-```
- - Tente Mostar  o Filme, o Gênero e o Detalhe do Filme 
+    filmes.titulo AS "Titulo do Filme",
+    detalhes.sinopse AS "sinopse do filme" 
+    FROM filmes  
+    INNER JOIN detalhes ON filmes.id = detalhes.filme_id;    
+``` 
+
+ - Tente Mostar  o Filme, o Gênero e o Detalhe do Filme   
+ ```sql 
+ SELECT  -- CONFORME você renomeia vai ser a sequencia da saida por exmplo filme genero e sinopse     
+    filmes.titulo  AS Filme,  
+    generos.nome AS Gênero,
+    detalhes.sinopse AS sinopse 
+    FROM filmes 
+    INNER JOIN generos ON filmes.genero_id = generos.id  
+    INNER JOIN detalhes ON filmes.id = detalhes.filme_id;
+
+ ```

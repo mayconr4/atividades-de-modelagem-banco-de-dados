@@ -55,7 +55,8 @@ VALUES(
     'O impossivel', 
     '2012-12-21', 
     5                
-);  
+);   
+b
 
 ``` 
 ### Inserindo detalhes a tabela filmes 

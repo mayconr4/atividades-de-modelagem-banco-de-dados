@@ -211,7 +211,7 @@ DELETE FROM fabricantes WHERE id = 3;
 -- DESC: oredena em ordem decrescente 
 -- ASC: ordena em ordem crescente (padrão)
 SELECT nome, preco FROM produtos ORDER BY nome;  
-SELECT nome, preco FROM produtos ORDER BY preco;  
+SELECT nome, preco FROM produtos ORDER BY preco ASC;  
 SELECT nome, preco FROM produtos ORDER BY preco DESC; 
 
 
